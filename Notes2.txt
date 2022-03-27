@@ -1,2 +1,6 @@
 ### 1. Navigate the Commit tree
 ## Reference commits
+#Tree-ish A directory containing files and other directories (which Git calls "trees")
+  #or any identifier which references a tree
+#A commit is considered tree-ish because it refers to a tree at the point when a
+  #commit has been applied
