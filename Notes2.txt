@@ -4,3 +4,62 @@
   #or any identifier which references a tree
 #A commit is considered tree-ish because it refers to a tree at the point when a
   #commit has been applied
+#A tree-ish is a directory, a commit or a reference
+  #SHA-1 hash, HEAD pointer ref, branch ref, tag ref, ancestry
+#HEAD pointer .git/HEAD usually say go look .git/refs/heads/master
+git show HEAD
+git show e523ace1eac
+## Ancestry
+#Get the parent of this commits e523ace1eac that is also the HEAD
+e523ace1eac^
+HEAD^
+master^
+#or
+HEAD~1, HEAD~ #same as git show HEAD^
+#Grandparent
+e523ace1eac^^
+HEAD^^
+master^^
+HEAD~2 #same as git show HEAD^^
+#Great-Grandparent
+e523ace1eac^^^
+HEAD^^^
+master^^^
+HEAD~3 #same as git show HEAD~3
+## Tree listings
+git ls-tree <tree-ish>
+git ls-tree HEAD #blobs are a file binary large object
+git ls-tree HEAD^
+git ls-tree HEAD assests/ #looking into a directory in assets
+## Filter the commit log
+git log
+git log -3 #shows last 3 logs
+git help log
+git log -n 5 #The five most recent commits
+git log --since=2019-01-01
+git log --until=2019-01-01
+git log --until="3 days ago"
+git log --author="Casper" #Can just use part of name
+git log --grep="Init" #searches in text
+git log --grep="Bugfix"
+git log --since=2019-03-01 --until=2019-03-31 --author="Karen" --grep="refactor" #example of long from quiz
+git log --after=2.weeks --before=3.days
+git log e523ace1eac..HEAD
+#git ls-tree HEAD #Look at changes to a file or directory
+git log explorers.html
+git log assets
+## Format the commit log
+git log -p #p=patch same as changeset
+git log --stat #statistics on changes
+git log --format=medium #default
+git log --format=short #does not provide date other format=oneline, full, fuller,
+  #email, raw
+git log --oneline
+git log --graph #really cool when Branching
+git log --graph --all --oneline --decorate
+git help ls-tree
+
+### 2. Branching
+## Branching overview
+## Create branches
+git branch
