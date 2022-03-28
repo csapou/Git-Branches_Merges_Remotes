@@ -62,4 +62,13 @@ git help ls-tree
 ### 2. Branching
 ## Branching overview
 ## Create branches
-git branch
+git branch #shows branches
+git branch new_feature #No spaces, can have underscores letters and numbers
+cat .git/HEAD
+ls -la .git/refs/heads/
+cat .git/refs/heads/master #SHA
+cat .git/refs/heads/new_feature #Points to same SHA right now
+git log --oneline
+## Switch branches
+git checkout new_feature
+cat .git/HEAD
