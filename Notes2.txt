@@ -134,3 +134,22 @@ git reset --hard <tree-ish>
   #amending one or more commits. Similar to git commit --amend.
   #Previous commits will be discarded.
 #can branch off another branch you are not on and move to that
+git checkout -b reset_branch new_feature_of_feature
+git commit -am "Commit A"
+git commit -am "Commit B"
+git reset --soft HEAD^ #not commit B but files are staged
+git reset --soft accb32e4e #back can move back since no changes was started
+git reset --soft HEAD^^
+git status
+git commit -am "Commit A and B"
+git log #Commit A and Commit B are gone
+## Mixed reset
+#Useful for reorganizing commits
+#Files are not staged after reset with --mixed
+#Can for instance have changes to two files and want to stage and commit
+  #Seperately
+## Hard reset
+#Useful to permanently undo commits. Previous commits and all changes will be discarded
+
+### 4. Merge branches
+## Merge code
