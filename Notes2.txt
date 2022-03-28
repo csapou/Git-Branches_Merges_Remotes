@@ -169,4 +169,6 @@ git commit -am "True merge"
 git log --graph --all --oneline --decorate
 ## Merge conflicts
 
+## Resolve merge conflicts
+
 ## Strat
