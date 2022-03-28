@@ -120,3 +120,17 @@ __git_ps1 #Shows the branch you are working on, I think this is implemented
   #state they had when a specified commit was made
   #Moves HEAD pointer to a specific commit
 #Types: soft, mixed and hard
+#Soft: Moves HEAD pointer. Does not change staging index. Does not
+  #change working directory
+git reset --soft <tree-ish>
+#Mixed (default): Moves HEAD pointer. Changes staging index to match repository. Does not
+  #change working directory
+git reset --mixed <tree-ish>
+#Hard: Moves HEAD pointer. Changes staging index to match repository.
+  #Changes working directory to match repository
+git reset --hard <tree-ish>
+## Soft reset
+#Why return to an old state and leave code changes staged. Useful for
+  #amending one or more commits. Similar to git commit --amend.
+  #Previous commits will be discarded.
+#can branch off another branch you are not on and move to that
