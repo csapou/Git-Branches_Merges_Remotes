@@ -169,3 +169,6 @@ git log --graph --all --oneline --decorate
 ## Merge conflicts
 
 ## Resolve merge conflicts
+git merge --abort #to abort merge or
+Solve conflicts add and commit
+git log --graph --all --oneline --decorate
