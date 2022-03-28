@@ -165,5 +165,5 @@ git diff master..notes_add
 #True merge when changes where also made to the master
   #Merge made by the 'recursive' strategy.
 git commit -am "True merge"
-git merge notes_add
+#git merge notes_add
 git log --graph --all --oneline --decorate
