@@ -167,3 +167,6 @@ git diff master..notes_addgit
 git commit -am "True merge"
 #git merge notes_add
 git log --graph --all --oneline --decorate
+## Merge conflicts
+
+## Resolve merge conflicts
