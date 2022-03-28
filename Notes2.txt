@@ -72,3 +72,5 @@ git log --oneline
 ## Switch branches
 git checkout new_feature
 cat .git/HEAD
+
+#Text for merging. .....
