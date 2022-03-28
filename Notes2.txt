@@ -72,7 +72,6 @@ git log --oneline
 ## Switch branches
 git checkout new_feature
 cat .git/HEAD
-<<<<<<< HEAD
 #saves notes and now want to add to branch
 git commit -am "Work on branch new_feature"
 git log --oneline
