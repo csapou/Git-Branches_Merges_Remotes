@@ -72,6 +72,7 @@ git log --oneline
 ## Switch branches
 git checkout new_feature
 cat .git/HEAD
+<<<<<<< HEAD
 #saves notes and now want to add to branch
 git commit -am "Work on branch new_feature"
 git log --oneline
@@ -153,3 +154,16 @@ git log #Commit A and Commit B are gone
 
 ### 4. Merge branches
 ## Merge code
+#Go git checkout notes_add sees notes.txt is an old version but now I'm adding
+  #some text to this and back to master
+git diff master..notes_add
+#git merge notes_add #HEAD is at master #Did not do
+#Always have a clean working directory is essential when merging
+## Fast-forward merge vs. true merge
+#Above the tip of the master had not changed therefor it was easy to merge
+  #Also called a fast-forward merge
+#True merge when changes where also made to the master
+  #Merge made by the 'recursive' strategy.
+git commit -am "True merge"
+git merge notes_add
+git log --graph --all --oneline --decorate
