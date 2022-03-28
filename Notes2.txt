@@ -62,4 +62,35 @@ git help ls-tree
 ### 2. Branching
 ## Branching overview
 ## Create branches
-git branch
+git branch #shows branches
+git branch new_feature #No spaces, can have underscores letters and numbers
+cat .git/HEAD
+ls -la .git/refs/heads/
+cat .git/refs/heads/master #SHA
+cat .git/refs/heads/new_feature #Points to same SHA right now
+git log --oneline
+## Switch branches
+git checkout new_feature
+cat .git/HEAD
+#saves notes and now want to add to branch
+git commit -am "Work on branch new_feature"
+git log --oneline
+git checkout master
+## Create and swith branches
+git checkout new_feature
+git checkout -b new_feature_of_feature #Creates and switches in one go
+git commit -am "Work on branch new_feature_of_feature"
+## Switch branches with uncommitted changes
+#Saves can now not checkout to master
+#Switching with uncommitted changes: Cannot switch if changes in working directory
+  #conflict, Can switch if changes in working directory could be applied without
+  # conflict, Can switch if files are not being tracked. Options commit the changes
+  #remove the changes (checkout the file again) or stash the changes
+git commit -am "Commit then I can checkout" #can now switch to another Branch
+## Compare branches
+git diff master..new_feature
+git diff new_feature..master #reversed changes, typically the oldest first
+git diff --color-words master..new_feature
+git diff master^..new_feature
+git branch --merged
+git branch --no-merged 
