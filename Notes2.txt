@@ -93,4 +93,30 @@ git diff new_feature..master #reversed changes, typically the oldest first
 git diff --color-words master..new_feature
 git diff master^..new_feature
 git branch --merged
-git branch --no-merged 
+git branch --no-merged
+## Rename branches
+git help branch
+git checkout new_feature
+#In documentation you can rename a branch with -m meaning move
+  #you can also rename a branch you are not on by adding the old name
+git branch -m notes_add #do not rename if collaborating on the branches with others
+## Delete branches
+git branch branch_to_delete
+git branch
+git branch -d branch_to_delete #d stands for delete
+git branch
+#Can not delete a branch you are on
+git checkout -b branch_to_delete
+git branch -d branch_to_delete
+#Can not if there are changes. Can run it with D if you are sure you want to delete the branch
+## Configure command prompt
+#Add current branch name to command prompt, similar to .git-completion.bash
+#Have to download the script
+__git_ps1 #Shows the branch you are working on, I think this is implemented
+
+### 3. Reset branches
+## Reset types
+#Reset changes the files in the staging index and/or working directory to the
+  #state they had when a specified commit was made
+  #Moves HEAD pointer to a specific commit
+#Types: soft, mixed and hard
