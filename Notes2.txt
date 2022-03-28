@@ -156,7 +156,7 @@ git log #Commit A and Commit B are gone
 ## Merge code
 #Go git checkout notes_add sees notes.txt is an old version but now I'm adding
   #some text to this and back to master
-git diff master..notes_add
+git diff master..notes_addgit
 #git merge notes_add #HEAD is at master #Did not do
 #Always have a clean working directory is essential when merging
 ## Fast-forward merge vs. true merge
