@@ -169,6 +169,18 @@ git log --graph --all --oneline --decorate
 ## Merge conflicts
 
 ## Resolve merge conflicts
+#Three ways abort manually and with a merge tool
 git merge --abort #to abort merge or
-Solve conflicts add and commit
+#Manually Solve conflicts git add and git commit without a message
 git log --graph --all --oneline --decorate
+#git reset hard can undo the merge use SHA back to not merged on master
+#git help mergetool #does not work but there are many merge tools
+#Presenter does not use these mergetools but a GUI
+## Strategies to reduce conflicts
+#Keep lines short
+#Keep commits small and focused
+#Beware stray edits to whitespace (spaces, tabs, line returns)
+#Merge often still keeping the branch, feature flags, can also merge master into
+  #the branch working on
+
+###
