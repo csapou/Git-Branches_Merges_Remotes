@@ -183,4 +183,27 @@ git log --graph --all --oneline --decorate
 #Merge often still keeping the branch, feature flags, can also merge master into
   #the branch working on
 
-###
+### 5. Stash Changes
+#Is a 4th area in git. Not part of the repository, staging index or working directory
+## Save changes in the stash
+#Made changes to a branch and want to checkout to another branch
+  #Can't before the changes are committed or stashed
+git stash save "Changes to ..."
+#Can now checkout, does not stash unstaged files, so if a new file is created
+  #is not stashed, but can git help stash -u or --include-untracked
+## View stashed changes
+git stash list #Can see what is stashed
+git stash show stash@{0}
+git stash show -p stash@{0} #to see changes p patch
+#Can now checkout
+## Retrieve stashed changes
+git stash pop
+git stash save "Changes to 5." #Stash again
+git stash apply #Keeps the stash, can have conflicts just like merges
+## Delete stashed changes
+git stash list
+git stash drop stash@{0}
+git stash clear #removes all stashed
+#Three ways to delete a stash these two and pop that popped it out again to work on
+
+### 6. Set up a remote
