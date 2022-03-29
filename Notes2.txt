@@ -229,8 +229,9 @@ git remote -v #Have both a fetch and push almost always the same at least for my
 cat .git/config #Can see the remote "origin"
 #To remove a remote git remote rm origin can add it again with the above add command
 ## Create a remote branch
-git branch -M main #Does not have this in presentation, but is in GitHub
-git push -u origin main
+#git branch -M main #Does not have this in presentation, but is in GitHub,
+  #changes name to main, changed it back
+git push -u origin master
 git branch -r #shows remote branches
 git branch -a #shows all branches
 ls -la .git/refs/remotes
