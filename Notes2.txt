@@ -207,3 +207,5 @@ git stash clear #removes all stashed
 #Three ways to delete a stash these two and pop that popped it out again to work on
 
 ### 6. Set up a remote
+git log --graph --all --oneline --decorate
+Local and remote repositories
