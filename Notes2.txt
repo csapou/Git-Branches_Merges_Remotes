@@ -1,3 +1,4 @@
+####LinkedIn course Kevin Skogland
 ### 1. Navigate the Commit tree
 ## Reference commits
 #Tree-ish A directory containing files and other directories (which Git calls "trees")
@@ -208,4 +209,31 @@ git stash clear #removes all stashed
 
 ### 6. Set up a remote
 git log --graph --all --oneline --decorate
-Local and remote repositories
+## Local and remote repositories
+#Local does not even need an internet connection
+#origin/master and master on local computer, have to do a merge to get into our master
+#a pull is called a fetch
+#origin/master is in reality just a branch that tries to stay in sync with
+  #the remote repository
+#The process make your changes locally fetch the origin/master and merge
+  #with the local changes and push back up to the remote server
+## Set up a GitHub account
+#The most popular git host
+## Add a remote repository
+git remote #list of current remotes is empty
+#Add github directory and gets "…or push an existing repository from the command line"
+git remote add origin https://github.com/csapou/Git-Branches_Merges_Remotes.git
+#Not synced yet
+git remote
+git remote -v #Have both a fetch and push almost always the same at least for my purpose
+cat .git/config #Can see the remote "origin"
+#To remove a remote git remote rm origin can add it again with the above add command
+## Create a remote branch
+git branch -M master #Does not have this in presentation, but is in GitHub
+git push -u origin master
+git branch -r #shows remote branches
+git branch -a #shows all branches
+ls -la .git/refs/remotes
+ls -la .git/refs/remotes/origin/
+ls -la .git/refs/remotes/origin/master/ #Contains a SHA
+## Clone a remote branch
