@@ -220,6 +220,10 @@ git log --graph --all --oneline --decorate
 ## Set up a GitHub account
 #The most popular git host
 ## Add a remote repository
+##########################################################
+###Had to do it by copying to hulk and do it from there###
+###Copy right click from owntokens starts with ghp_#######
+##########################################################
 git remote #list of current remotes is empty
 #Add github directory and gets "…or push an existing repository from the command line"
 git remote add origin https://github.com/csapou/Git-Branches_Merges_Remotes.git
@@ -237,4 +241,26 @@ git branch -a #shows all branches
 ls -la .git/refs/remotes
 ls -la .git/refs/remotes/origin/
 ls -la .git/refs/remotes/origin/master/ #Contains a SHA
-## Clone a remote branch
+## Clone a remote repository
+#Go to project clone or download provide url -> http...
+git clone https... #will use the directory name at cloning
+git clone https... other_version_of #Gives the directory another name
+git branch -r #Here only one branch the master
+## Track remote branches
+#Tracking trying to keep them closely in sync
+#-u with the push tracking the branch
+cat .git/config
+git help branch
+git branch -u branchname #Same as -u --set-upstream-to= and specify upstream
+git push origin other_branch
+git branch --unset-upstream branchname
+#Tracking is saving some typing, have to specify it, if it is a tracking branch
+  #dont have to
+git branch -u origin/non_tracking non_tracking #Now this branch is being tracked
+git branch --unset-upstream non_tracking #Not being tracked
+
+### 7. Collaborate with a remote
+## Push changes to a remote repository 
+git log --oneline -5 master #Our local branch
+git log --oneline -5 origin/master #Tracking branch of the remote branch, not the actual remote branch 
+git diff origin/master..master
