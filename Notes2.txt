@@ -263,4 +263,78 @@ git branch --unset-upstream non_tracking #Not being tracked
 ## Push changes to a remote repository 
 git log --oneline -5 master #Our local branch
 git log --oneline -5 origin/master #Tracking branch of the remote branch, not the actual remote branch 
-git diff origin/master..master
+git diff origin/master..master #No difference just pushed
+#Changed Notes2 commit on hulk then
+git diff origin/master..master #Now I can see the differences
+git diff --color-words origin/master..master
+git push #Because it is a tracking branch I don't have to write the long: git push origin master 
+## Fetch changes from a remote repository
+#git fetch to reposity, so does not merge anything into what you are working on
+#git pull to working directory  
+#Fetch often and as the first thing, 
+#Fetch before you push
+#Fetch before you go offline #These rules of cause only apply if you are collaborating with somebody 
+	#otherwise it does not make sense 
+##Merge in fetched changes
+#Fast forward merge
+git fetch + git merge (git pull) #When not have made any changes easier to do a git pull
+	#When working using git fetch and compare and then maybe end of the day merge 
+##Check out remote branches
+#Can not checkout a remote branch otherwise the same 
+git branch non_tracking origin/non_tracking #then have branch locally to work on
+#Delete git branch -d non_tracking and now use checkout so also moving the HEAD to the new branch
+git checkout -b non_tracking origin/non_tracking
+##Push to an updated remote branch 
+#fetch - merge - push
+##Delete a remote branch
+#Telling github to remove a branch
+git push origin :non_tracking #If colon is removed it is the same as pushing, non intuitive but colon then deleting
+	#if pushing can also do this non_tracking:non_tracking, when removing non_tracking in front it means
+	#push nothing to non_tracking
+#Other way to delete more intuituive but longer
+git push origin --delete non_tracking
+##Enable collaboration
+#Add collaborators to a project github - settings - collaborators - add collaborator to project
+	#They can read and write to that project
+#Open source projects
+	#Then you have to fork the project, but first what do you want to change and then check issues and pull 
+	#request to see if anybody else is working on it.
+	#If not then you can fork - pull - work on feature - push - pull request
+##Collaboration workflow
+#-My side
+git checkout master
+git fetch #Some work done,
+git merge origin/master
+#Work on feature
+git checkout -b feedback_form
+git add feedback.html
+git commit -m "Add customer feedback form"
+git fetch #no other have been added
+git push -u origin feedback_form
+#-Collaborator view
+git checkout master
+git fetch 
+git merge origin/master
+git checkout -b feedback_form origin/feedback_form #Need the new brach
+git log
+git show SHA 
+#Open in browser, want to add 
+git commit -am "Add ... "
+git fetch
+git push
+#-My side
+git fetch
+git log -p feedback_form..origin/feedback_form #Take a look what she added
+git merge origin/feedback_form
+git checkout master
+git fetch
+git merge origin/master #If changes
+git merge feedback_form #local have now
+git push #Feature is now on the remote 
+
+
+
+ 
+
+ 
+
